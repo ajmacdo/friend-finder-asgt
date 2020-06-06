@@ -1,11 +1,18 @@
+
+var path = require("path");
 // Your htmlRoutes.js file should include two routes:
 
 // A GET Route to /survey which should display the survey page.
 // A default, catch-all route that leads to home.html which displays the home page.
+
+
+module.exports = function(app) {
+
 app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "view.html"));
+    res.sendFile(path.join(__dirname, "home.html"));
   });
   
-  app.get("/add", function(req, res) {
-    res.sendFile(path.join(__dirname, "add.html"));
+  app.get("/survey", function(req, res) {
+    res.sendFile(path.join(__dirname, "survey.html"));
   });
+};
